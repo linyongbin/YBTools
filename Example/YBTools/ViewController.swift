@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import YBTools
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        label.attributedText = label.yb_attribute(text: "请使用QQ手机版扫描二维码，\n安全登录，防止盗号。").yb_color(color: .blue, changeStr: "QQ手机版")
+        
     }
 
     override func didReceiveMemoryWarning() {

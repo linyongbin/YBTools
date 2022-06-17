@@ -7,16 +7,16 @@ Pod::Spec.new do |s|
   s.homepage     = "https://gitee.com/XinDeGangWan/YBTools" # 你的主页
   s.source       = { :git => "https://gitee.com/XinDeGangWan/YBTools.git", :tag => "#{s.version}" }#你的仓库地址，不能用SSH地址
 
-  s.source_files  = 'YBTools/Classes/**/*.{h,m}'
-// Classes下不包含任何内容时，以下代码要注释或者直接删除
+  s.source_files  = 'YBTools/Classes/**/*.{swift}'
+# Classes下不包含任何内容时，以下代码要注释或者直接删除
 # s.source_files = 'YBTools/Classes/**/*.{h,m}'
-// 不包含任何bundle资源时，以下代码要注释或者直接删除
+# 不包含任何bundle资源时，以下代码要注释或者直接删除
 # s.resource_bundles = {
 #   'YBTools' => ['YBTools/Assets/*.png']
 # }
 
   #s.requires_arc = true # 是否启用ARC
-  s.platform     = :ios, "10.0" #平台及支持的最低版本
+  s.platform     = :ios, "11.0" #平台及支持的最低版本
   s.frameworks   = "UIKit", "Foundation" #支持的框架
   
   # User
