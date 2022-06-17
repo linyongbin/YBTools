@@ -1,42 +1,25 @@
-#
-# Be sure to run `pod lib lint YBTools.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = 'YBTools'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of YBTools.'
+  s.name         = "YBTools" # 项目名称
+  s.version      = "1.0.0"        # 版本号 与 你仓库的 标签号 对应
+  s.license      = "MIT"   # 开源证书
+  s.summary      = "常用的一些工具类" # 项目简介
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.homepage     = "https://gitee.com/XinDeGangWan/YBTools" # 你的主页
+  s.source       = { :git => "https://gitee.com/XinDeGangWan/YBTools.git", :tag => "#{s.version}" }#你的仓库地址，不能用SSH地址
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.source_files  = 'YBTools/Classes/**/*.{h,m}'
+// Classes下不包含任何内容时，以下代码要注释或者直接删除
+# s.source_files = 'YBTools/Classes/**/*.{h,m}'
+// 不包含任何bundle资源时，以下代码要注释或者直接删除
+# s.resource_bundles = {
+#   'YBTools' => ['YBTools/Assets/*.png']
+# }
 
-  s.homepage         = 'https://github.com/林勇彬/YBTools'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '林勇彬' => '447000693@qq.com' }
-  s.source           = { :git => 'https://github.com/林勇彬/YBTools.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'YBTools/Classes/**/*'
+  #s.requires_arc = true # 是否启用ARC
+  s.platform     = :ios, "10.0" #平台及支持的最低版本
+  s.frameworks   = "UIKit", "Foundation" #支持的框架
   
-  # s.resource_bundles = {
-  #   'YBTools' => ['YBTools/Assets/*.png']
-  # }
+  # User
+  s.author             = { "LinYongbin" => "447000693@qq.com" } # 作者信息
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
