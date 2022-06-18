@@ -39,6 +39,8 @@
 		CA54C09A12400567AFFCB407EEB7E154 /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = 4568279DE47DC3AB91598E1317503995 /* UIImage+Diff.m */; };
 		CC403265A301E5D53027C203E377FF6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		D272E16E4206A1A6C3BC137655652397 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
+		E83C7A4B285C8BB40086FEB0 /* UIColor+YBTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C7A4A285C8BB40086FEB0 /* UIColor+YBTools.swift */; };
+		E86549DB285D5E8300F94FEA /* UIView+YBTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86549DA285D5E8300F94FEA /* UIView+YBTools.swift */; };
 		FC1ED6429A983E4944021869FA07EA2C /* UILabel+YBTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37BE1BF0A6D3F914130A16C4E7521D /* UILabel+YBTools.swift */; };
 		FF3A700D611289E96F355D44BA36DBA6 /* YBTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0257CC657EFA2E8402E434F30E8315E3 /* YBTools-dummy.m */; };
 		FF8307B7346F4D3BA13C11AECFE6EDD0 /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,7 +76,7 @@
 		06DC817513625A66A6FE6512418F04D2 /* Pods-YBTools_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YBTools_Tests-dummy.m"; sourceTree = "<group>"; };
 		0F538C426803AE34255FC6E35B408CCA /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
 		19AE97C4AF6CB432D7A79778784DDDB9 /* Pods-YBTools_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YBTools_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1A89A5E7C319BF8E8E2973863802D3D7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1A89A5E7C319BF8E8E2973863802D3D7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
 		1DA24A38BA9EE106B59E3D4C8DD1CE0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		235A78CFFA6D8B8D86CACD733531CB13 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 		462E80A6093D0567A688E78CBEAF8601 /* Pods-YBTools_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YBTools_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4BA267B0BA75C047026112D3AD52251A /* Pods-YBTools_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YBTools_Example-dummy.m"; sourceTree = "<group>"; };
 		4C6513B09838318BD763CFD5390D1DE0 /* FBSnapshotTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.release.xcconfig; sourceTree = "<group>"; };
-		4D06DC567485F59D187D326971E2FE0D /* YBTools.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = YBTools.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4D06DC567485F59D187D326971E2FE0D /* YBTools.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = YBTools.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		58FF0E110C32C3326AF6D07CC3B5C46C /* Pods-YBTools_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YBTools_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		5A97D27B1477F46A4873D599E50F1350 /* Pods-YBTools_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YBTools_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -108,11 +110,11 @@
 		9468E867498BBAF36F9AFFE4845F8B09 /* FBSnapshotTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.debug.xcconfig; sourceTree = "<group>"; };
 		96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A12FB531326CFA0E92F2267C46CAC76A /* YBMarcos.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = YBMarcos.swift; sourceTree = "<group>"; };
 		AA46A19C2036C14B66702C9C99D27DEC /* Pods-YBTools_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YBTools_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AD5E8D8AD86FFD1649354547C755B6F9 /* Pods-YBTools_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YBTools_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		AE4471BF4861147C008E838EA183258C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		AE4471BF4861147C008E838EA183258C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AE9FF9459FBCDC4AF88FB6B5A4CC1439 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		AFC0E50835EA476C0C22EA6E1163556D /* YBTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YBTools.debug.xcconfig; sourceTree = "<group>"; };
 		B7103CA00AED20722C5B69CA5B4F6938 /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
@@ -130,6 +132,8 @@
 		E03D2AB849BB158C481526D07F60C0AA /* YBTools-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YBTools-Info.plist"; sourceTree = "<group>"; };
 		E15718B13B352135449E3A4F8912C7F1 /* YBTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YBTools-prefix.pch"; sourceTree = "<group>"; };
 		E658F388F01C72599CA75537950B6095 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E83C7A4A285C8BB40086FEB0 /* UIColor+YBTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+YBTools.swift"; sourceTree = "<group>"; };
+		E86549DA285D5E8300F94FEA /* UIView+YBTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+YBTools.swift"; sourceTree = "<group>"; };
 		FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 		FFDF839A3D57448BF5C846D673DED001 /* Pods-YBTools_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YBTools_Example.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,7 +317,6 @@
 				B69B2ECE2D2C9A3924A9231138CE0BBC /* Support Files */,
 				906402ECC4C6C5EB58DD365FD2C64E92 /* SwiftSupport */,
 			);
-			name = FBSnapshotTestCase;
 			path = FBSnapshotTestCase;
 			sourceTree = "<group>";
 		};
@@ -363,6 +366,8 @@
 				D55609A387596FCE992C0B847E6F9149 /* NSMutableAttributedString+YBTools.swift */,
 				82CB2BD4EF2D39605AA549B8812F29E2 /* NSString+YBTools.swift */,
 				3E37BE1BF0A6D3F914130A16C4E7521D /* UILabel+YBTools.swift */,
+				E83C7A4A285C8BB40086FEB0 /* UIColor+YBTools.swift */,
+				E86549DA285D5E8300F94FEA /* UIView+YBTools.swift */,
 			);
 			name = Category;
 			path = YBTools/Classes/Category;
@@ -575,6 +580,8 @@
 			files = (
 				BE1D2F06840FEE6F26AACBA537554374 /* NSMutableAttributedString+YBTools.swift in Sources */,
 				8C88055610F4A6D49B9A636FE4F3611D /* NSString+YBTools.swift in Sources */,
+				E83C7A4B285C8BB40086FEB0 /* UIColor+YBTools.swift in Sources */,
+				E86549DB285D5E8300F94FEA /* UIView+YBTools.swift in Sources */,
 				FC1ED6429A983E4944021869FA07EA2C /* UILabel+YBTools.swift in Sources */,
 				2EF1EDB3E1A704B72991B7FFA87724A8 /* YBMarcos.swift in Sources */,
 				FF3A700D611289E96F355D44BA36DBA6 /* YBTools-dummy.m in Sources */,
@@ -924,8 +931,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
