@@ -10,7 +10,7 @@
   },
   "source_files": "YBTools/Classes/**/*.{swift}",
   "platforms": {
-    "ios": "11.0"
+    "ios": "12.0"
   },
   "swift_versions": "5.0",
   "frameworks": [

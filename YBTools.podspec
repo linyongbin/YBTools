@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary      = "常用的一些工具类" # 项目简介
 
   s.homepage     = "https://gitee.com/XinDeGangWan/YBTools" # 你的主页
-  s.source       = { :git => "https://gitee.com/XinDeGangWan/YBTools.git", :tag => "#{s.version}" }#你的仓库地址，不能用SSH地址
+  s.source       = { :git => "https://gitee.com/XinDeGangWan/YBTools.git", :tag => s.version.to_s }#你的仓库地址，不能用SSH地址
 
   s.source_files  = 'YBTools/Classes/**/*.{swift}'
 # Classes下不包含任何内容时，以下代码要注释或者直接删除
@@ -16,11 +16,11 @@ Pod::Spec.new do |s|
 # }
 
   #s.requires_arc = true # 是否启用ARC
-  s.platform     = :ios, "11.0" #平台及支持的最低版本
-  s.swift_version='5.0'#支持swift版本
-  s.frameworks   = "UIKit", "Foundation" #支持的框架
+  s.platform      = :ios, "12.0" #平台及支持的最低版本
+  s.swift_version = '5.0'#支持swift版本
+  s.frameworks    = "UIKit", "Foundation" #支持的框架
   
   # User
-  s.author             = { "LinYongbin" => "447000693@qq.com" } # 作者信息
+  s.author        = { "LinYongbin" => "447000693@qq.com" } # 作者信息
 
 end
