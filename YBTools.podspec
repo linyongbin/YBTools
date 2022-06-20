@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   #s.requires_arc = true # 是否启用ARC
   s.platform     = :ios, "11.0" #平台及支持的最低版本
+  s.swift_version='5.0'#支持swift版本
   s.frameworks   = "UIKit", "Foundation" #支持的框架
   
   # User

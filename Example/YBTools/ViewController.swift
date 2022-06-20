@@ -26,7 +26,6 @@ class ViewController: UIViewController {
 //        label.layer.cornerRadius = 10
         label.backgroundColor = .white
         
-        
         topView.backgroundColor = .red
 //        topView.cornerRadiusBorder(radius: 30, corners: .allCorners, color: .blue, lineWidth: 1)
         topView.yb_cornerRadius(cornerRadii: 10, corner: .allCorners)

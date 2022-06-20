@@ -71,7 +71,7 @@ public extension NSMutableAttributedString {
     ///   - changeStr: 需要修改的文字
     ///   - style: 删除线的样式
     /// - Returns: 本身
-    @discardableResult func yb_strikethrough(changeStr: String? = nil,style: NSUnderlineStyle = .styleSingle) -> Self {
+    @discardableResult func yb_strikethrough(changeStr: String? = nil,style: NSUnderlineStyle = .single) -> Self {
         let changeString = changeStr ?? self.changeStr()
         self.changeStr(changeStr: changeString)
         self.addAttribute(NSAttributedString.Key.strikethroughStyle, value: style.rawValue, range: (self.string as NSString).range(of: changeString))
@@ -83,7 +83,7 @@ public extension NSMutableAttributedString {
     ///   - changeStr: 需要修改的文字
     ///   - style: 删除线的样式
     /// - Returns: 本身
-    @discardableResult func yb_underline(changeStr: String? = nil,style: NSUnderlineStyle = .styleSingle) -> Self {
+    @discardableResult func yb_underline(changeStr: String? = nil,style: NSUnderlineStyle = .single) -> Self {
         let changeString = changeStr ?? self.changeStr()
         self.changeStr(changeStr: changeString)
         self.addAttribute(NSAttributedString.Key.underlineStyle, value: style.rawValue, range: (self.string as NSString).range(of: changeString))

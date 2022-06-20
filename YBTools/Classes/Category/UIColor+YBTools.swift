@@ -7,9 +7,9 @@
 
 import Foundation
 
-extension UIColor {
+public extension UIColor {
     
-    public class func yb_hex(hex: String,alpha:CGFloat = 1) -> UIColor {
+    class func yb_hex(hex: String,alpha:CGFloat = 1) -> UIColor {
         var red: CGFloat   = 0.0
         var green: CGFloat = 0.0
         var blue: CGFloat  = 0.0
@@ -56,6 +56,11 @@ extension UIColor {
         let blue = Int.random(in: 0...255)
 
         return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1)
+    }
+    
+    @available(iOS 13.0, tvOS 13.0, *)
+    convenience init(light: UIColor, dark: UIColor) {
+        self.init(dynamicProvider: { $0.userInterfaceStyle == .dark ? dark : light })
     }
     
 }

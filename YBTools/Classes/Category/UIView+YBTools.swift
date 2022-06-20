@@ -8,9 +8,9 @@
 import Foundation
 
 //MARK: 获取View的基本信息
-extension UIView {
+public extension UIView {
     
-    @objc public var yb_X: CGFloat {
+    @objc var yb_X: CGFloat {
         get {
             self.frame.origin.x
         }
@@ -21,7 +21,7 @@ extension UIView {
         }
     }
     
-    @objc public var yb_Y: CGFloat {
+    @objc var yb_Y: CGFloat {
         get {
             self.frame.origin.y
         }
@@ -32,7 +32,7 @@ extension UIView {
         }
     }
     
-    @objc public var yb_Width: CGFloat {
+    @objc var yb_Width: CGFloat {
         get {
             self.frame.size.width
         }
@@ -43,7 +43,7 @@ extension UIView {
         }
     }
     
-    @objc public var yb_Height: CGFloat {
+    @objc var yb_Height: CGFloat {
         get {
             self.frame.size.height
         }
@@ -54,7 +54,7 @@ extension UIView {
         }
     }
     
-    @objc public var yb_maxX: CGFloat{
+    @objc var yb_maxX: CGFloat{
         get{
             yb_X + yb_Width
         }
@@ -62,7 +62,7 @@ extension UIView {
             yb_X = newValue - yb_Width
         }
     }
-    @objc public var yb_maxY: CGFloat{
+    @objc var yb_maxY: CGFloat{
         get{
             yb_Y + yb_Height
         }
@@ -71,7 +71,7 @@ extension UIView {
         }
     }
     
-    @objc public var yb_centerX: CGFloat{
+    @objc var yb_centerX: CGFloat{
         get{
             yb_Width * 0.5
         }
@@ -80,7 +80,7 @@ extension UIView {
         }
     }
     
-    @objc public var yb_centerY: CGFloat{
+    @objc var yb_centerY: CGFloat{
         get{
             yb_Height * 0.5
         }
@@ -91,7 +91,7 @@ extension UIView {
 }
 
 //MARK: 边框圆角
-extension UIView {
+public extension UIView {
     
     /// 圆角优化 离屏渲染优化方案
     /// 无法添加阴影效果，阴影会被剪切掉
@@ -99,7 +99,7 @@ extension UIView {
     ///   - cornerRadii: 圆角半径
     ///   - corner: 方向
     /// - Returns: 贝塞尔曲线
-    @objc public func yb_cornerRadius(cornerRadii:CGFloat,corner:UIRectCorner) {
+    @objc func yb_cornerRadius(cornerRadii:CGFloat,corner:UIRectCorner) {
         self.layoutIfNeeded()
         
         let maskPath = UIBezierPath.init(roundedRect: self.bounds, byRoundingCorners: corner, cornerRadii: CGSize.init(width: cornerRadii, height: cornerRadii))
@@ -114,7 +114,7 @@ extension UIView {
     ///   - borderWidth: 宽度
     ///   - borderColor: 颜色
     ///   - direction: 方向
-    @objc public func yb_border(borderWidth:CGFloat,borderColor:UIColor,direction:UIRectEdge) {
+    @objc func yb_border(borderWidth:CGFloat,borderColor:UIColor,direction:UIRectEdge) {
         self.layoutIfNeeded()
         
         if direction.contains(.all)  {
@@ -154,7 +154,7 @@ extension UIView {
     ///   - corners: 圆角方向
     ///   - color: 边框颜色
     ///   - lineWidth: 边框宽度
-    @objc public func cornerRadiusBorder(radius: CGFloat, corners: UIRectCorner, color: UIColor, lineWidth: CGFloat) {
+    @objc func cornerRadiusBorder(radius: CGFloat, corners: UIRectCorner, color: UIColor, lineWidth: CGFloat) {
         self.layoutIfNeeded()
         
         let maskPath = UIBezierPath.init(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize.init(width: radius, height: radius))
@@ -186,23 +186,23 @@ extension UIView {
     ///   - shadowOffset: 阴影偏移量
     ///   - shadowRadius: 阴影半径
     ///   - shadowOpacity: 阴影透明度
-    @objc public func yb_shadow(shadowColor: UIColor, shadowOffset: CGSize, shadowRadius: CGFloat, shadowOpacity: Float ) {
+    @objc func yb_shadow(shadowColor: UIColor, shadowOffset: CGSize, shadowRadius: CGFloat, shadowOpacity: Float ) {
         self.layer.shadowColor = shadowColor.cgColor
         self.layer.shadowOffset = shadowOffset
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowOpacity = shadowOpacity
     }
     
-    @objc public func yb_shadowDefault(shadowColor: UIColor) {
+    @objc func yb_shadowDefault(shadowColor: UIColor) {
         self.yb_shadow(shadowColor: shadowColor, shadowOffset: CGSize(width: 5, height: 5), shadowRadius: 5, shadowOpacity: 0.5)
     }
 }
 
 
 //MARK: 其他
-extension UIView {
+public extension UIView {
     
-    @objc public enum GradienDirectionType:Int
+    @objc enum GradienDirectionType:Int
     {
         case LeftToRight
         case TopToBottom
@@ -211,7 +211,7 @@ extension UIView {
     }
     
     //MARK: View的背景渐变
-    @objc public func yb_backgroundGradient(type:GradienDirectionType,colors:[UIColor])
+    @objc func yb_backgroundGradient(type:GradienDirectionType,colors:[UIColor])
     {
         self.backgroundColor = .clear
         let maskLayer = CAGradientLayer()

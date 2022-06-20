@@ -12,11 +12,13 @@
   "platforms": {
     "ios": "11.0"
   },
+  "swift_versions": "5.0",
   "frameworks": [
     "UIKit",
     "Foundation"
   ],
   "authors": {
     "LinYongbin": "447000693@qq.com"
-  }
+  },
+  "swift_version": "5.0"
 }

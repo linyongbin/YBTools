@@ -29,3 +29,26 @@ public extension String {
     }
     
 }
+
+//MARK: 正则表达式
+public extension String {
+    /**#pragma mark -- 金额
+     + (BOOL)moneyPredicateWithMoney:(NSString *)target{
+         NSString *regex = @"(([0]|(0[.]\\d{0,2}))|([1-9]\\d{0,8}(([.]\\d{0,2})?)))?";//一般格式 d{0,8} 控制位数
+         return [[self class] regexPatternResultWithRegex:regex TargetString:target];
+     }*/
+    
+    /// 判断该字符串是不是金额
+    /// - Returns: true or false
+    func isMoney() -> Bool {
+        //一般格式 d{0,8} 控制位数
+        let regex = "(([0]|(0[.]\\d{0,2}))|([1-9]\\d{0,8}(([.]\\d{0,2})?)))?"
+        return self.regexPattern(regex: regex, target: self)
+    }
+    
+    func regexPattern(regex: String,target: String) -> Bool {
+        if target.isEmpty { return true }
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        return predicate.evaluate(with: target)
+    }
+}
