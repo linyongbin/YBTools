@@ -8,7 +8,8 @@
 
 import Foundation
 
-public var ybAppWindows:UIWindow? {
+/// 当前的Window
+public var yb_currentWindow:UIWindow? {
     if #available(iOS 13.0, *) {
         let scene = UIApplication.shared.connectedScenes.first
         guard let windowScene = scene as? UIWindowScene else { return nil }
@@ -19,10 +20,28 @@ public var ybAppWindows:UIWindow? {
         return window
     }
 }
+/// 当前的控制器
+public var yb_currentVC: UIViewController? {
+    var current = yb_currentWindow?.rootViewController
+    
+    while (current?.presentedViewController != nil)  {
+        current = current?.presentedViewController
+    }
+    
+    if let tabbar = current as? UITabBarController , tabbar.selectedViewController != nil {
+        current = tabbar.selectedViewController
+    }
+    
+    while let navi = current as? UINavigationController , navi.topViewController != nil  {
+        current = navi.topViewController
+    }
+    return current
+}
 
-public var isiPhoneX: Bool {
+/// 判断该手机是否有刘海
+private var isiPhoneX: Bool {
     if #available(iOS 11, *) {
-        guard let unwrapedWindow = ybAppWindows else {
+        guard let unwrapedWindow = yb_currentWindow else {
             return false
         }
         if unwrapedWindow.safeAreaInsets.left > 0 || unwrapedWindow.safeAreaInsets.bottom > 0 {
@@ -32,6 +51,7 @@ public var isiPhoneX: Bool {
     return false
 }
 
+// MARK: - app设备各种数值
 
 /*! @brief 当前屏幕宽度
  */
@@ -54,7 +74,7 @@ public let ybNavBarHeightNotIncludeStatusBar : CGFloat = 44
 /// 状态栏默认高度
 public var ybStatusBarHeight: CGFloat {
     if #available(iOS 13, *) {
-        return ybAppWindows?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? 20
+        return yb_currentWindow?.windowScene?.statusBarManager?.statusBarFrame.size.height ?? 20
     }else {
         return UIApplication.shared.statusBarFrame.height
     }
@@ -66,7 +86,7 @@ public let ybNavBarHeight: CGFloat = ybNavBarHeightNotIncludeStatusBar + ybStatu
 public let ybTabbarHeight : CGFloat = 49
 
 /// 底部安全区域
-public let ybSafetyAreaBottomHeight : CGFloat = ybAppWindows?.safeAreaInsets.bottom ?? 0
+public let ybSafetyAreaBottomHeight : CGFloat = yb_currentWindow?.safeAreaInsets.bottom ?? 0
 
 /// 底部安全区域+Tabbar的高度
 public let ybTabbarHeight_Total : CGFloat = ybTabbarHeight + ybSafetyAreaBottomHeight

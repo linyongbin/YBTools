@@ -169,13 +169,12 @@ public extension UIView {
         borderLayer.strokeColor = color.cgColor
         // 填充颜色默认为黑色，把颜色clear掉
         borderLayer.fillColor = UIColor.clear.cgColor
-        if let layers: NSArray = self.layer.sublayers as? NSArray {
-            if let last = layers.lastObject as? AnyObject {
-                if last.isKind(of: CAShapeLayer.self) {
-                    last.removeFromSuperlayer()
-                }
+
+        self.layer.sublayers?.forEach({ layer in
+            if layer.isKind(of: CAShapeLayer.self) {
+                layer.removeFromSuperlayer()
             }
-        }
+        })
         
         self.layer.addSublayer(borderLayer)
     }
@@ -198,6 +197,44 @@ public extension UIView {
     }
 }
 
+//MARK: 子类操作
+public extension UIView {
+    
+    /// 删除所有子view
+    func yb_removeAllSubviews() {
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
+    }
+    
+    /// 删除Subviews中的某一类型
+    /// - Parameter viewType: Subview的类型
+    func yb_removeViewItem(viewType:AnyClass) {
+        for view in self.subviews {
+            if view.isKind(of: viewType) {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
+    /// 删除所有的Sublayers
+    func yb_removeAllSublayers() {
+        self.layer.sublayers?.forEach({ layer in
+            layer.removeFromSuperlayer()
+        })
+    }
+    
+    /// 删除Sublayers中的某一类型
+    /// - Parameter layerType: Sublayer的类型
+    func yb_removeLayerItme(layerType:AnyClass) {
+        self.layer.sublayers?.forEach({ layer in
+            if layer.isKind(of: layerType) {
+                layer.removeFromSuperlayer()
+            }
+        })
+    }
+    
+}
 
 //MARK: 其他
 public extension UIView {
@@ -210,7 +247,11 @@ public extension UIView {
         case BottomToTop
     }
     
-    //MARK: View的背景渐变
+    /// View的背景渐变
+    /// 加了渐变颜色如果需要加圆角切割的话，需要设置clipsToBounds或者layer.masksToBounds属性
+    /// - Parameters:
+    ///   - type: 渐变方向
+    ///   - colors: 颜色集合
     @objc func yb_backgroundGradient(type:GradienDirectionType,colors:[UIColor])
     {
         self.backgroundColor = .clear
@@ -237,9 +278,17 @@ public extension UIView {
             maskLayer.endPoint = CGPoint.init(x: 0, y: 0)
         }
         maskLayer.frame = self.bounds
+        
+        self.yb_removeLayerItme(layerType: CAGradientLayer.self)
+        
         self.layer.addSublayer(maskLayer)
         self.layer.insertSublayer(maskLayer, at: 0)
         self.setNeedsDisplay()
+        
+        if self.isKind(of: UIButton.self) {
+            let btn = self as! UIButton
+            btn.bringSubviewToFront(btn.imageView ?? UIImageView())
+        }
     }
     
 }

@@ -17,7 +17,7 @@ YBTools is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'YBTools'
+pod 'YBTools', pod "YBTools", :git => 'https://gitee.com/XinDeGangWan/YBTools.git'
 ```
 
 ## Author

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "YBTools" # 项目名称
-  s.version      = "1.0.0"        # 版本号 与 你仓库的 标签号 对应
+  s.version      = "1.0.1"        # 版本号 与 你仓库的 标签号 对应
   s.license      = "MIT"   # 开源证书
   s.summary      = "常用的一些工具类" # 项目简介
 

@@ -9,44 +9,38 @@ import Foundation
 
 public extension UIColor {
     
-    class func yb_hex(hex: String,alpha:CGFloat = 1) -> UIColor {
-        var red: CGFloat   = 0.0
-        var green: CGFloat = 0.0
-        var blue: CGFloat  = 0.0
-        var alpha: CGFloat  = alpha
-
-        let scanner = Scanner(string: hex)
-        var hexValue: CUnsignedLongLong = 0
-        if scanner.scanHexInt64(&hexValue) {
-            switch (hex.count) {
-            case 3:
-                red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
-                green = CGFloat((hexValue & 0x0F0) >> 4)       / 15.0
-                blue  = CGFloat(hexValue & 0x00F)              / 15.0
-            case 4:
-                red   = CGFloat((hexValue & 0xF000) >> 12)     / 15.0
-                green = CGFloat((hexValue & 0x0F00) >> 8)      / 15.0
-                blue  = CGFloat((hexValue & 0x00F0) >> 4)      / 15.0
-                alpha = CGFloat(hexValue & 0x000F)             / 15.0
-            case 6:
-                red   = CGFloat((hexValue & 0xFF0000) >> 16)   / 255.0
-                green = CGFloat((hexValue & 0x00FF00) >> 8)    / 255.0
-                blue  = CGFloat(hexValue & 0x0000FF)           / 255.0
-            case 8:
-                red   = CGFloat((hexValue & 0xFF000000) >> 24) / 255.0
-                green = CGFloat((hexValue & 0x00FF0000) >> 16) / 255.0
-                blue  = CGFloat((hexValue & 0x0000FF00) >> 8)  / 255.0
-                alpha = CGFloat(hexValue & 0x000000FF)         / 255.0
-            default:
-                // Invalid RGB string, number of characters after '#' should be either 3, 4, 6 or 8
-                return UIColor(red: red, green: green, blue: blue, alpha: alpha)
-            }
-        } else {
-            // "Scan hex error
-            return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    
+    /// 16进制数转化成颜色，传字符串
+    /// - Parameters:
+    ///   - hex: hex值
+    ///   - alpha: 透明度
+    /// - Returns: 返回颜色
+    class func yb_hex(hex: String,alpha:CGFloat = 1) -> UIColor{
+        let tempStr = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        let scanner = Scanner(string: tempStr)
+        scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
+        var hexint : UInt32 = 0
+        scanner.scanHexInt32(&hexint)
+        
+        let color = UIColor(red: ((CGFloat) ((hexint & 0xFF0000) >> 16))/255, green: ((CGFloat) ((hexint & 0xFF00) >> 8))/255, blue: ((CGFloat) (hexint & 0xFF))/255, alpha: alpha)
+        return color
+    }
+    
+    /// 16进制数转化成颜色，传16进制数
+    /// - Parameters:
+    ///   - hex: hex值
+    ///   - alpha: 透明度
+    /// - Returns: 返回颜色
+    class func yb_hex(hex: Int,alpha:CGFloat = 1) -> UIColor {
+        if !(0...0xFFFFFF ~= hex) {
+            return UIColor.white
         }
-
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        let red:CGFloat = CGFloat((hex & 0xFF0000) >> 16)
+        let green:CGFloat = CGFloat((hex & 0x00FF00) >> 8)
+        let blue:CGFloat = CGFloat((hex & 0x0000FF))
+        let color = UIColor(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: alpha)
+        return color
     }
     
     /// 随机颜色
